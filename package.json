@@ -24,7 +24,11 @@
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26",
     "@ngxs/store": "^3.2.0",
-    "n"
+    "@ngxs/logger-plugin": "^3.2.0",
+    "@ngxs/devtools-plugin": "^3.2.0",
+    "@ngxs/storage-plugin": "^3.2.0",
+    "@ngxs/form-plugin": "^3.2.0",
+    "@ngxs/router-plugin": "^3.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
