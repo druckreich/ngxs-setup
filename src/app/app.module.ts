@@ -8,7 +8,10 @@ import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
 import {NgxsFormPluginModule} from '@ngxs/form-plugin';
-import {NgxsRouterPluginModule} from '@ngxs/router-plugin';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MainService} from './+store/main.service';
+import {MainState} from './+store/main.state';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,14 +19,21 @@ import {NgxsRouterPluginModule} from '@ngxs/router-plugin';
   ],
   imports: [
     BrowserModule,
-    NgxsModule.forRoot([]),
-    NgxsLoggerPluginModule.forRoot(),
+    HttpClientModule,
+    ReactiveFormsModule,
+    // RouterModule.forRoot(),
+    NgxsModule.forRoot([
+      MainState
+
+    ]),
+
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot(),
-    NgxsFormPluginModule.forRoot(), ,
-    NgxsRouterPluginModule.forRoot()
+    NgxsFormPluginModule.forRoot(),
+    // NgxsRouterPluginModule.forRoot()
+    NgxsLoggerPluginModule.forRoot({disabled: true})
   ],
-  providers: [],
+  providers: [MainService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
