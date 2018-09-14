@@ -13,15 +13,15 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'ngxs-demo-shell'`, async(() => {
+  it(`should have as title 'ngxs-setup'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ngxs-demo-shell');
+    expect(app.title).toEqual('ngxs-setup');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ngxs-demo-shell!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ngxs-setup!');
   }));
 });

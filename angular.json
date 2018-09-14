@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngxs-demo-shell": {
+    "ngxs-setup": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngxs-demo-shell",
+            "outputPath": "dist/ngxs-setup",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngxs-demo-shell:build"
+            "browserTarget": "ngxs-setup:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngxs-demo-shell:build:production"
+              "browserTarget": "ngxs-setup:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngxs-demo-shell:build"
+            "browserTarget": "ngxs-setup:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "ngxs-demo-shell-e2e": {
+    "ngxs-setup-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "targets": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngxs-demo-shell:serve"
+            "devServerTarget": "ngxs-setup:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngxs-demo-shell:serve:production"
+              "devServerTarget": "ngxs-setup:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "ngxs-demo-shell"
+  "defaultProject": "ngxs-setup"
 }
