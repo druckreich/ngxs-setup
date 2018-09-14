@@ -1,4 +1,4 @@
-import {Action, Selector, State, StateContext} from '@ngxs/store';
+import {Action, NgxsOnInit, Selector, State, StateContext} from '@ngxs/store';
 import {GetVersion} from './main.actions';
 import {MainService} from './main.service';
 import {tap} from 'rxjs/operators';
@@ -18,7 +18,7 @@ export interface MainStateModel {
     version: {}
   },
 })
-export class MainState {
+export class MainState implements NgxsOnInit {
 
   // Memoized Selector
   @Selector()
@@ -28,6 +28,10 @@ export class MainState {
 
   constructor(private mainService: MainService) {
 
+  }
+
+  ngxsOnInit(ctx?: StateContext<any>): void | any {
+    ctx.dispatch(new GetVersion());
   }
 
   @Action(GetVersion)
